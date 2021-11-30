@@ -1,0 +1,19 @@
+entity News{
+	title String,
+    content TextBlob,
+    top Boolean,
+    topTime Instant,
+    createTime Instant,
+    updateTime Instant,
+    readCount Long
+}
+entity Comments {
+	content String,
+    name String,
+    createTime Instant,
+    updateTime Instant,
+}
+
+relationship OneToMany {
+  News{comments} to Comments{news(title)}
+}
